@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_navigation"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="psb.app4.thebeatles.MainFragment"
+        android:label="fragment_main" />
+    <fragment
+        android:id="@+id/albumFragment"
+        android:name="psb.app4.thebeatles.AlbumFragment"
+        android:label="fragment_album" >
+        <action
+            android:id="@+id/albumToSong"
+            app:destination="@id/songFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="psb.app4.thebeatles.SearchFragment"
+        android:label="fragment_search" />
+    <fragment
+        android:id="@+id/videoFragment"
+        android:name="psb.app4.thebeatles.VideoFragment"
+        android:label="fragment_video" >
+        <action
+            android:id="@+id/videoToSong"
+            app:destination="@id/songFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/songFragment"
+        android:name="psb.app4.thebeatles.SongFragment"
+        android:label="fragment_song"
+        tools:layout="@layout/fragment_song" >
+        <action
+            android:id="@+id/songToVideo"
+            app:destination="@id/videoFragment" />
+    </fragment>
+</navigation>
